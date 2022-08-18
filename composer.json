@@ -1,5 +1,5 @@
 {
-    "name": "bishwajitcadhikary/bank",
+    "name": "medicarebd/bank-module",
     "type": "laravel-module",
     "description": "This is a bank module, where administration bank information will be saved",
     "authors": [
