@@ -1,0 +1,25 @@
+{
+    "name": "bishwajitcadhikary/bank",
+    "type": "laravel-module",
+    "description": "This is a bank module, where administration bank information will be saved",
+    "authors": [
+        {
+            "name": "Bishwajit Adhikary",
+            "email": "bishwajitcadhikary@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Bank\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}
