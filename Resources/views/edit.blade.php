@@ -16,6 +16,7 @@
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.banks.update', $bank->id) }}" method="post" class="instant_reload_form">
+                        @csrf
                         @method('PUT')
                         <div class="form-group">
                             <label for="name" class="required">{{ __("Bank Name") }}</label>

@@ -16,6 +16,7 @@
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.banks.store') }}" method="post" class="instant_reload_form">
+                        @csrf
                         <div class="form-group">
                             <label for="name" class="required">{{ __("Bank Name") }}</label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="{{ __("Enter bank name") }}" required>
