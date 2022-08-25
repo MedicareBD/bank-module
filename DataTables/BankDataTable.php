@@ -2,14 +2,11 @@
 
 namespace Modules\Bank\DataTables;
 
-use Modules\Bank\Entities\Bank;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
+use Modules\Bank\Entities\Bank;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
-use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class BankDataTable extends DataTable
@@ -18,8 +15,8 @@ class BankDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addIndexColumn()
-            ->editColumn('signature', fn($model) => '<img src="'.asset($model->signature).'" height="20">')
-            ->editColumn('created_at', fn($model) => format_date($model->created_at))
+            ->editColumn('signature', fn ($model) => '<img src="'.asset($model->signature).'" height="20">')
+            ->editColumn('created_at', fn ($model) => format_date($model->created_at))
             ->addColumn('action', 'bank::action')
             ->setRowId('id')
             ->rawColumns(['signature', 'action']);
@@ -56,13 +53,13 @@ class BankDataTable extends DataTable
                 ->exportable(false)
                 ->orderable(false)
                 ->title('#'),
-            Column::make('name')->title(__("Bank Name")),
-            Column::make('account_name')->title(__("Account Name")),
-            Column::make('account_number')->title(__("Account Number")),
-            Column::make('branch')->title(__("Branch")),
-            Column::make('routing_number')->title(__("Routing Number")),
-            Column::make('signature')->title(__("Signature")),
-            Column::make('created_at')->title(__("Created At")),
+            Column::make('name')->title(__('Bank Name')),
+            Column::make('account_name')->title(__('Account Name')),
+            Column::make('account_number')->title(__('Account Number')),
+            Column::make('branch')->title(__('Branch')),
+            Column::make('routing_number')->title(__('Routing Number')),
+            Column::make('signature')->title(__('Signature')),
+            Column::make('created_at')->title(__('Created At')),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
@@ -75,6 +72,6 @@ class BankDataTable extends DataTable
 
     protected function filename(): string
     {
-        return 'Banks_' . date('YmdHis');
+        return 'Banks_'.date('YmdHis');
     }
 }

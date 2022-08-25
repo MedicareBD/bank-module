@@ -35,12 +35,12 @@ class BankController extends Controller
         ]);
 
         Bank::create([
-            'signature' => $this->upload($request->file('signature'))
+            'signature' => $this->upload($request->file('signature')),
         ] + $validated);
 
         return response()->json([
-            'message' => __("Bank Created Successfully"),
-            'redirect' => route('admin.banks.index')
+            'message' => __('Bank Created Successfully'),
+            'redirect' => route('admin.banks.index'),
         ]);
     }
 
@@ -66,17 +66,17 @@ class BankController extends Controller
             'status' => ['required', 'boolean'],
         ]);
 
-        if ($request->hasFile('signature')){
+        if ($request->hasFile('signature')) {
             $signature = $this->upload($request->file('signature'), $bank->signature);
         }
 
         $bank->update([
-            'signature' => $signature ?? $bank->signature
+            'signature' => $signature ?? $bank->signature,
         ] + $validated);
 
         return response()->json([
-            'message' => __("Bank Updated Successfully"),
-            'redirect' => route('admin.banks.index')
+            'message' => __('Bank Updated Successfully'),
+            'redirect' => route('admin.banks.index'),
         ]);
     }
 
@@ -86,7 +86,7 @@ class BankController extends Controller
         $bank->delete();
 
         return response()->json([
-            'message' => __("Bank Deleted Successfully"),
+            'message' => __('Bank Deleted Successfully'),
         ]);
     }
 }
