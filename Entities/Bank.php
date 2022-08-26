@@ -10,9 +10,4 @@ class Bank extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-
-    protected static function newFactory()
-    {
-        return \Modules\Bank\Database\factories\BankFactory::new();
-    }
 }
